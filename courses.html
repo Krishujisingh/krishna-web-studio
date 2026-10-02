@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Courses | The Ultimate Classes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top left, #172554, transparent 35%),
+                radial-gradient(circle at bottom right, #111827, transparent 40%),
+                #020617;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+
+        header {
+            width: 100%;
+            padding: 18px 7%;
+            background: rgba(2, 6, 23, 0.82);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 9px 13px;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+            background: rgba(56, 189, 248, 0.12);
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 45px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: rgba(56, 189, 248, 0.08);
+            color: #7dd3fc;
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #94a3b8;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* COURSES */
+
+        .courses-section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 35px 7% 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+        }
+
+        /* GRID */
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .course-card {
+            position: relative;
+            padding: 28px;
+            min-height: 245px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            background: linear-gradient(145deg,
+                    rgba(255, 255, 255, 0.08),
+                    rgba(255, 255, 255, 0.025));
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.35s;
+        }
+
+        .course-card::before {
+            content: "";
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            background: #38bdf8;
+            filter: blur(70px);
+            opacity: 0.12;
+            top: -50px;
+            right: -40px;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(56, 189, 248, 0.45);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        .icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .course-card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .course-card p {
+            color: #94a3b8;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .course-card ul {
+            list-style: none;
+        }
+
+        .course-card li {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        .course-card li::before {
+            content: "✓";
+            color: #38bdf8;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* SPECIAL SECTION */
+
+        .special {
+            margin-top: 55px;
+        }
+
+        .special .course-card {
+            min-height: 230px;
+        }
+
+        /* CTA */
+
+        .cta {
+            max-width: 1000px;
+            margin: 20px auto 80px;
+            padding: 45px 30px;
+            text-align: center;
+            border-radius: 25px;
+            background: linear-gradient(135deg,
+                    rgba(14, 165, 233, 0.12),
+                    rgba(30, 41, 59, 0.5));
+            border: 1px solid rgba(56, 189, 248, 0.18);
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        .cta a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #0284c7;
+            padding: 13px 25px;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta a:hover {
+            background: #0369a1;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:900px) {
+
+            .nav {
+                flex-direction: column;
+            }
+
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media(max-width:600px) {
+
+            header {
+                padding: 15px 4%;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 7px 8px;
+            }
+
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 55px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .courses-section {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav">
+
+            <div class="logo">
+                THE ULTIMATE <span>CLASSES</span>
+            </div>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="teacher.html">Teacher</a>
+                <a href="why-us.html">Why Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="badge">
+            Learn • Practice • Achieve
+        </div>
+
+        <h1>
+            Explore Our <span>Courses</span>
+        </h1>
+
+        <p>
+            Build strong concepts, improve your knowledge and achieve your
+            academic goals with structured learning and expert guidance.
+        </p>
+
+    </section>
+
+
+    <!-- COURSES -->
+
+    <section class="courses-section">
+
+        <div class="section-title">
+            <h2>Academic Courses</h2>
+            <p>Courses designed for every stage of your learning journey.</p>
+        </div>
+
+
+        <div class="course-grid">
+
+
+            <!-- COURSE 1 -->
+
+            <div class="course-card">
+
+                <div class="icon">📚</div>
+
+                <h3>Class 1 – 5</h3>
+
+                <p>
+                    Strong foundation for young learners with simple,
+                    interactive and concept-based learning.
+                </p>
+
+                <ul>
+                    <li>Mathematics</li>
+                    <li>Science</li>
+                    <li>English</li>
+                    <li>Basic Concepts</li>
+                </ul>
+
+            </div>
+
+
+            <!-- COURSE 2 -->
+
+            <div class="course-card">
+
+                <div class="icon">🎓</div>
+
+                <h3>Class 6 – 8</h3>
+
+                <p>
+                    Build strong academic fundamentals and develop
+                    better understanding of important concepts.
+                </p>
+
+                <ul>
+                    <li>Mathematics</li>
+                    <li>Science</li>
+                    <li>English</li>
+                    <li>Concept Building</li>
+                </ul>
+
+            </div>
+
+
+            <!-- COURSE 3 -->
+
+            <div class="course-card">
+
+                <div class="icon">📖</div>
+
+                <h3>Class 9 – 10</h3>
+
+                <p>
+                    Focused preparation for school examinations and
+                    board-level concepts.
+                </p>
+
+                <ul>
+                    <li>Mathematics</li>
+                    <li>Science</li>
+                    <li>English</li>
+                    <li>Board Preparation</li>
+                </ul>
+
+            </div>
+
+
+            <!-- COURSE 4 -->
+
+            <div class="course-card">
+
+                <div class="icon">🚀</div>
+
+                <h3>Class 11 – 12</h3>
+
+                <p>
+                    Advanced academic preparation with special attention
+                    to concepts, practice and examinations.
+                </p>
+
+                <ul>
+                    <li>Mathematics</li>
+                    <li>Science</li>
+                    <li>English</li>
+                    <li>Exam Preparation</li>
+                </ul>
+
+            </div>
+
+
+            <!-- COURSE 5 -->
+
+            <div class="course-card">
+
+                <div class="icon">⚡</div>
+
+                <h3>IIT-JEE Foundation</h3>
+
+                <p>
+                    Develop strong fundamentals and problem-solving
+                    skills for future competitive examination preparation.
+                </p>
+
+                <ul>
+                    <li>Concept Building</li>
+                    <li>Problem Solving</li>
+                    <li>Regular Practice</li>
+                    <li>Foundation Preparation</li>
+                </ul>
+
+            </div>
+
+
+            <!-- COURSE 6 -->
+
+            <div class="course-card">
+
+                <div class="icon">🧬</div>
+
+                <h3>NEET Foundation</h3>
+
+                <p>
+                    Build the academic foundation required for future
+                    medical entrance examination preparation.
+                </p>
+
+                <ul>
+                    <li>Science Concepts</li>
+                    <li>Regular Practice</li>
+                    <li>Problem Solving</li>
+                    <li>Foundation Preparation</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- SPECIAL COURSES -->
+
+        <div class="section-title special">
+
+            <h2>Special Programs</h2>
+
+            <p>
+                Additional programs to develop skills beyond regular academics.
+            </p>
+
+        </div>
+
+
+        <div class="course-grid">
+
+
+            <!-- NDA -->
+
+            <div class="course-card">
+
+                <div class="icon">🛡️</div>
+
+                <h3>NDA Foundation</h3>
+
+                <p>
+                    Build the academic foundation and disciplined learning
+                    habits required for future NDA preparation.
+                </p>
+
+                <ul>
+                    <li>Mathematics</li>
+                    <li>General Studies</li>
+                    <li>Regular Practice</li>
+                    <li>Foundation Training</li>
+                </ul>
+
+            </div>
+
+
+            <!-- ENGLISH -->
+
+            <div class="course-card">
+
+                <div class="icon">🗣️</div>
+
+                <h3>English Speaking</h3>
+
+                <p>
+                    Improve your communication skills and gain confidence
+                    in speaking English in everyday situations.
+                </p>
+
+                <ul>
+                    <li>Spoken English</li>
+                    <li>Grammar</li>
+                    <li>Vocabulary</li>
+                    <li>Communication Skills</li>
+                </ul>
+
+            </div>
+
+
+            <!-- PERSONAL GUIDANCE -->
+
+            <div class="course-card">
+
+                <div class="icon">🎯</div>
+
+                <h3>Personal Guidance</h3>
+
+                <p>
+                    Focused academic guidance to identify weak areas,
+                    improve concepts and achieve better results.
+                </p>
+
+                <ul>
+                    <li>Weak Area Analysis</li>
+                    <li>Concept Improvement</li>
+                    <li>Practice Support</li>
+                    <li>Study Guidance</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>Ready to Start Learning?</h2>
+
+        <p>
+            Take the next step towards better learning and stronger concepts.
+        </p>
+
+        <a href="contact.html">
+            Contact Us
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 The Ultimate Classes. All Rights Reserved.
+
+    </footer>
+
+
+</body>
+
+</html>

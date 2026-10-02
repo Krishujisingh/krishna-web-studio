@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tests | The Ultimate Classes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #050b16;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: #07111f;
+        }
+
+        header h1 {
+            font-size: 42px;
+        }
+
+        header h1 span {
+            color: #4da6ff;
+        }
+
+        header p {
+            color: #b9c7d8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            padding: 25px;
+            min-height: 180px;
+            border-radius: 18px;
+
+            background: linear-gradient(145deg,
+                    rgba(255, 255, 255, 0.12),
+                    rgba(255, 255, 255, 0.04));
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .card h3 {
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #b7c3d2;
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 11px 18px;
+            margin-top: 8px;
+
+            background: #1677ff;
+            color: white;
+
+            border: none;
+            border-radius: 9px;
+
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #005bea;
+        }
+
+        .special {
+            border-color: #ffd43b;
+        }
+
+        .special h3 {
+            color: #ffd43b;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .back {
+            background: #34445a;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #030812;
+            color: #8290a3;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+
+        <h1>Online <span>Tests</span></h1>
+
+        <p>
+            Practice. Test Yourself. Improve Your Performance.
+        </p>
+
+    </header>
+
+
+    <div class="container">
+
+
+        <!-- MAIN PAGE -->
+
+        <div id="mainPage">
+
+            <h2>School Classes</h2>
+
+            <div class="cards">
+
+
+                <div class="card">
+                    <h3>Class 1</h3>
+                    <p>Practice tests for Class 1.</p>
+                    <button class="btn" onclick="openClass(1)">View Tests</button>
+                </div>
+
+
+                <div class="card">
+                    <h3>Class 2</h3>
+                    <p>Practice tests for Class 2.</p>
+                    <button class="btn" onclick="openClass(2)">View Tests</button>
+                </div>
+
+
+                <div class="card">
+                    <h3>Class 3</h3>
+                    <p>Practice tests for Class 3.</p>
+                    <button class="btn" onclick="openClass(3)">View Tests</button>
+                </div>
+
+
+                <div class="card">
+                    <h3>Class 4</h3>
+                    <p>Practice tests for Class 4.</p>
+                    <button class="btn" onclick="openClass(4)">View Tests</button>
+                </div>
+
+
+                <div class="card">
+                    <h3>Class 5</h3>
+                    <p>Practice tests for Class 5.</p>
+                    <button class="btn" onclick="openClass(5)">View Tests</button>
+                </div>
+
+
+                <div class="card">
+                    <h3>Class 6</h3>
+                    <p>Practice tests for Class 6.</p>
+                    <button class="btn" onclick="openClass(6)">View Tests</button>
+                </div>
+
+
+                <div class="card">
+                    <h3>Class 7</h3>
+                    <p>Practice tests for Class 7.</p>
+                    <button class="btn" onclick="openClass(7)">View Tests</button>
+                </div>
+
+
+                <div class="card">
+                    <h3>Class 8</h3>
+                    <p>Practice tests for Class 8.</p>
+                    <button class="btn" onclick="openClass(8)">View Tests</button>
+                </div>
+
+
+                <div class="card">
+                    <h3>Class 9</h3>
+                    <p>Practice tests for Class 9.</p>
+                    <button class="btn" onclick="openClass(9)">View Tests</button>
+                </div>
+
+
+                <div class="card">
+                    <h3>Class 10</h3>
+                    <p>Practice tests for Class 10.</p>
+                    <button class="btn" onclick="openClass(10)">View Tests</button>
+                </div>
+
+
+                <div class="card">
+                    <h3>Class 11</h3>
+                    <p>Practice tests for Class 11.</p>
+                    <button class="btn" onclick="openClass(11)">View Tests</button>
+                </div>
+
+
+                <div class="card">
+                    <h3>Class 12</h3>
+                    <p>Practice tests for Class 12.</p>
+                    <button class="btn" onclick="openClass(12)">View Tests</button>
+                </div>
+
+            </div>
+
+
+            <h2>Foundation & Competitive Tests</h2>
+
+            <div class="cards">
+
+
+                <div class="card special">
+                    <h3>IIT-JEE Foundation</h3>
+                    <p>JEE Foundation practice tests.</p>
+                    <button class="btn" onclick="openSpecial('IIT-JEE')">
+                        View Tests
+                    </button>
+                </div>
+
+
+                <div class="card special">
+                    <h3>NEET Foundation</h3>
+                    <p>NEET Foundation practice tests.</p>
+                    <button class="btn" onclick="openSpecial('NEET')">
+                        View Tests
+                    </button>
+                </div>
+
+
+                <div class="card special">
+                    <h3>NDA Foundation</h3>
+                    <p>NDA Foundation practice tests.</p>
+                    <button class="btn" onclick="openSpecial('NDA')">
+                        View Tests
+                    </button>
+                </div>
+
+
+                <div class="card special">
+                    <h3>English Speaking</h3>
+                    <p>English language practice tests.</p>
+                    <button class="btn" onclick="openSpecial('English Speaking')">
+                        View Tests
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUBJECT PAGE -->
+
+        <div id="subjectPage" class="hidden">
+
+            <button class="btn back" onclick="goBack()">
+                ← Back
+            </button>
+
+            <h2 id="title"></h2>
+
+            <div id="subjects" class="cards"></div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        © 2026 THE ULTIMATE CLASSES. All Rights Reserved.
+
+    </footer>
+
+
+    <script>
+
+        function openClass(classNumber) {
+
+            document.getElementById("mainPage").classList.add("hidden");
+
+            document.getElementById("subjectPage").classList.remove("hidden");
+
+            document.getElementById("title").innerText =
+                "Class " + classNumber + " Subjects";
+
+            let subjects;
+
+            if (classNumber <= 5) {
+
+                subjects = [
+                    "Mathematics",
+                    "English",
+                    "Hindi",
+                    "EVS"
+                ];
+
+            } else if (classNumber <= 10) {
+
+                subjects = [
+                    "Mathematics",
+                    "Science",
+                    "English",
+                    "Social Science"
+                ];
+
+            } else {
+
+                subjects = [
+                    "Mathematics",
+                    "Physics",
+                    "Chemistry",
+                    "English"
+                ];
+            }
+
+            showSubjects(subjects);
+
+        }
+
+
+        function openSpecial(type) {
+
+            document.getElementById("mainPage").classList.add("hidden");
+
+            document.getElementById("subjectPage").classList.remove("hidden");
+
+            document.getElementById("title").innerText =
+                type + " Subjects";
+
+
+            let subjects;
+
+
+            if (type === "IIT-JEE") {
+
+                subjects = [
+                    "Mathematics",
+                    "Physics",
+                    "Chemistry"
+                ];
+
+            } else if (type === "NEET") {
+
+                subjects = [
+                    "Physics",
+                    "Chemistry",
+                    "Biology"
+                ];
+
+            } else if (type === "NDA") {
+
+                subjects = [
+                    "Mathematics",
+                    "English",
+                    "General Ability"
+                ];
+
+            } else {
+
+                subjects = [
+                    "Grammar",
+                    "Vocabulary",
+                    "Speaking Practice"
+                ];
+            }
+
+
+            showSubjects(subjects);
+
+        }
+
+
+        function showSubjects(subjects) {
+
+            let box = document.getElementById("subjects");
+
+            box.innerHTML = "";
+
+
+            subjects.forEach(function (subject) {
+
+                box.innerHTML += `
+
+            <div class="card">
+
+                <h3>${subject}</h3>
+
+                <p>
+                    Practice tests and questions.
+                </p>
+
+                <button class="btn"
+                    onclick="openTest('${subject}')">
+
+                    View Tests
+
+                </button>
+
+            </div>
+
+        `;
+
+            });
+
+        }
+
+
+        function openTest(subject) {
+
+            alert(
+                subject + " tests will be added here."
+            );
+
+        }
+
+
+        function goBack() {
+
+            document.getElementById("subjectPage").classList.add("hidden");
+
+            document.getElementById("mainPage").classList.remove("hidden");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
